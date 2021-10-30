@@ -13,6 +13,12 @@ const typeDefs = gql`
         favoritedBy: [User!]
     }
 
+    type NoteFeed {
+        notes: [Note]!
+        cursor: String!
+        hasNextPage: Boolean!
+    }
+
     type User {
         id: ID!
         username: String!
@@ -29,6 +35,7 @@ const typeDefs = gql`
         user(username: String!): User
         users: [User!]!
         me: User!        
+        noteFeed(cursor: String): NoteFeed 
     }
 
     type Mutation {
