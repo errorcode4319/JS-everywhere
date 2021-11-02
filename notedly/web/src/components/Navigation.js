@@ -45,7 +45,7 @@ const Navigation = () => {
     return (
         <Nav>
             <NavList>
-            <li>
+                <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>

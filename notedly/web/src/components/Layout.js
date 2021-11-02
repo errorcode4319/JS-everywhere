@@ -25,7 +25,7 @@ const Main = styled.main`
 
     @media (min-width: 700px) {
         flex: 1;
-        maring-left: 220px;
+        margin-left: 220px;
         height: calc(100% - 64px);
         width: calc(100% - 220px);
     }
