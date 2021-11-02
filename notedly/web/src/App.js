@@ -5,12 +5,23 @@ import GlobalStyle from '/components/GlobalStyle';
 
 import Pages from '/pages';
 
+import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+
+const uri = process.env.API_URI;
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({
+    uri,
+    cache,
+    connectToDevTools: true 
+});
+
 const App = () => {
     return (
-        <div>
+        <ApolloProvider client={client}>
             <GlobalStyle/>
             <Pages />
-        </div>
+        </ApolloProvider>
     );
 };
 
