@@ -1,6 +1,25 @@
 import React from 'react';
 
-import Button from '../components/Button';
+import {useQuery, gql} from '@apollo/client';
+
+const GET_NOTES = gql`
+    query NoteFeed($cursor: String) {
+        noteFeed(cursor: $cursor) {
+            cursor 
+            hasNextPage 
+            notes {
+                id 
+                createdAt 
+                favoriteCount 
+                author {
+                    username 
+                    id 
+                    avatar 
+                }
+            }
+        }
+    }
+`;
 
 const Home = () => {
     return (
